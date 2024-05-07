@@ -2340,7 +2340,7 @@ static u32 flow_hash_from_keys_seeded(const struct net *net,
 	siphash_key_t *seed_ctx;
 
 	rcu_read_lock();
-	seed_ctx = rcu_dereference(net->ipv6.fib_multipath_hash_seed_ctx);
+	seed_ctx = rcu_dereference(net->ipv6.multipath_hash_seed_ctx);
 	if (seed_ctx)
 		mhash = flow_multipath_hash_from_keys(hash_keys, seed_ctx);
 	else
